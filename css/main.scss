@@ -3,6 +3,9 @@
 ---
 @charset "utf-8";
 
+$footer-bg: #123123;
+$footer-color: #565;
+
 // Icons
 .icon {
 
@@ -18,5 +21,22 @@
   }
 }
 
+.img-single { // This is a terrible name..
+  margin-top: 20px;
+  //margin-bottom: 20px;
+}
+
+.jumbotron {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.jumbotron.jumbotron-first {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "syntax-highlighting";
+@import
+  "footer",
+  "syntax-highlighting"
+;

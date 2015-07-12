@@ -1,0 +1,21 @@
+#footer {
+  background-color: $footer-bg;
+  color: $footer-color;
+  margin-top: 20px;
+  padding-top: 20px;
+
+  #mark {
+    float: right;
+    margin-bottom: 20px;
+  }
+
+  #tram {
+    // TODO: Get an original image
+    background-image: url("/img/tram.jpg");
+    background-size: 87px 80px;
+    background-repeat: no-repeat;
+    padding-left: 107px;
+    padding-right: 20px;
+    min-height: 80px;
+  }
+}
