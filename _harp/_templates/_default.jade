@@ -1,0 +1,34 @@
+doctype html
+html
+	head
+		link(rel="stylesheet" href="css/main.css")
+		meta(charset="UTF-8")
+	body
+		.wrap
+			header
+				nav
+					block logo
+						a(href="/index" title="Home").minilogo: h1 Spruce
+							span .sh
+					block navigation
+						.main-nav
+							a(href="/contact" title="Contact")
+								| Contact Us
+			section.content
+				.page-hero
+					p: small.text-fade '/spruːs/' — <em>verb</em> — make someone or something smarter or tidier
+					block page-hero
+				block page-content
+			section.text-content.mailing-list
+				block mailing-list
+					h3.widestyle Register your interest
+					block actualform
+						.mailing-group
+							input(type="text", name="mailing-signup", placeholder="you@youremail.com").mailing-signup
+							input(type="submit", name="mailing-submit", value="Sign Up").mailing-submit
+			footer.text-fade
+				block footer
+					p.label Copyright &copy; 2015 Spruce Pty Ltd
+					p.label ABN 330 000 000 000
+					p.label
+						a(href="#" title="Legal") Legal

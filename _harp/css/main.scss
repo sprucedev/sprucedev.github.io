@@ -1,0 +1,414 @@
+@import 'fonts';
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+ 
+    @-o-keyframes $animation_name {
+        @content;
+    }
+ 
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the ani  tion from restarting! */
+ 
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+/* Spacing */
+$base-spacing-unit: 16px;
+$base-line-height: 24px;
+$wide-break: 1200px;
+$narrow-break: 760px;
+$mega-narrow-break: 486px;
+
+/* Fonts */
+// Work Sans is Amazing
+$base-font-stack: 'WorkSans', Helvetica, Arial, sans-serif;
+
+
+////////// Typography 
+$h1-size: 9.6;
+$h2-size: 4.8;
+$h3-size: 3.2;
+$h4-size: 2.4;
+$h5-size: 1.6;
+$p-size:  1.6;
+$sml-size: 1.4;
+$mini-size: 1.1;
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight:normal;
+	line-height:1;
+	margin:0;
+	margin-bottom:$base-spacing-unit;
+}
+h1, .h1 {
+	font-weight: 100;
+	@include font-size($h1-size);
+	line-height:1.333333;
+	margin-bottom:$base-spacing-unit*2;
+	@media screen and (max-width: $wide-break) {
+	  	@include font-size($h2-size);
+	}
+}
+
+h2, .h2 {
+	font-weight: 100;
+	@include font-size($h2-size);
+	line-height:1;
+	margin-bottom:$base-spacing-unit*2;
+}
+
+h3, .h3 {
+	font-weight: 100;
+	@include font-size($h3-size);
+	line-height:1;
+}
+
+h4, .h4 {
+	font-weight: 100;
+	@include font-size($h4-size);
+	line-height:1;
+}
+
+h5, .h5 {
+	font-weight: 500;
+	@include font-size($h5-size);
+	line-height:1;
+}
+
+p {
+	line-height: 2;
+	@include font-size($p-size);
+	margin:0;
+	margin-bottom:$base-spacing-unit;
+	em {
+
+	}
+}
+.sml {
+	@include font-size($sml-size);
+}
+.mini {
+	@include font-size($mini-size);
+}
+
+
+//////////
+
+/* Colors Night */
+$brand-dark: #0D344F;
+$brand-light: #fff;
+$brand-light-fade: rgba($brand-light, 0.5);
+$brand-action: #FF6B6B;
+$brand-action-fade: rgba($brand-action, 0.5);
+$brand-action-fade-alt: #854E5C;
+$brand-brand: #0D344F;
+
+// /* Colors Night Alt */
+// $brand-dark: #0D344F;
+// $brand-light: #fff;
+// $brand-light-fade: rgba($brand-light, 0.5);
+// $brand-action: lighten($brand-dark, 35%);
+// $brand-action-fade: rgba($brand-action, 0.5);
+// $brand-action-fade-alt: #854E5C;
+// $brand-brand: #0D344F;
+
+// /* Colors Day */
+// $brand-dark: #f3f3f3;
+// $brand-light: #414141;
+// $brand-light-fade: rgba($brand-light, 0.5);
+// $brand-action: #0061E9;
+// $brand-action-fade: rgba($brand-action, 0.5);
+
+/* UI */
+$ui-color-pass: #07F19D;
+$ui-color-fail: lighten($brand-dark,32%);
+$ui-color-fail: #FF5086;
+$ui-color-attention: #FF9B1A;
+$ui-color-inprogress: lighten($brand-dark, 35%);
+
+html {
+	-webkit-font-smoothing:subpixel-antialiased;
+	font-family: $base-font-stack;
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+	background-color: $brand-dark;
+	color: $brand-light;
+	margin:0;
+	padding:0;
+	height: 100%;
+	font-weight: 500;
+
+}
+body {
+	@include font-size(1.4);
+}
+a {
+	color: $brand-action;
+	text-decoration:none;
+	&:hover {
+		color: $brand-light-fade;
+	}
+	// &:focus:before {
+	// 	text-transform: lowercase;
+	// 	padding:0;
+	// 	z-index:999;
+	// 	@include font-size(12.8);
+	// 	content: "Go to:" attr(title);
+	// 	position:absolute;
+	// 	display: flex;
+	// 	align-items: center;
+	// 	justify-content: center;
+	// 	width:100vw;
+	// 	height:100vh;
+	// 	top:0;
+	// 	left:0;
+
+	// 	color:white;
+	// 	background-color: rgba($brand-dark, .85);
+	// }
+}
+ul li {
+	margin-bottom:$base-spacing-unit;
+}
+em {
+	font-style:normal;
+	border-bottom: 1px dotted $brand-action-fade;
+	color: $brand-action;
+}
+
+.widetext, .label {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.wrap {
+	padding: $base-spacing-unit*4;
+	height:100%;
+	flex-direction: column;
+	max-width: $wide-break;
+	margin: 0 auto;
+	@media screen and (max-width: $wide-break) {
+	  	padding: $base-spacing-unit*2;
+	}
+	@media screen and (max-width: $mega-narrow-break) {
+		padding: $base-spacing-unit;
+	}
+}
+header {
+	display: flex;
+	margin-bottom: $base-spacing-unit*4;
+	color: $brand-light-fade;
+	nav {
+		p {
+			margin:0;
+		}
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-content: center;
+		text-transform: uppercase;
+	}
+	nav a {
+		letter-spacing: 4px;
+		text-decoration: none;
+		display: inline-block;
+		padding: $base-spacing-unit;
+	}
+	.main-nav {
+
+	}
+
+}
+.content {
+	flex: 1;
+}
+.text-light {
+	color: $brand-light;
+}
+.text-fade {
+	color: $brand-light-fade;
+}
+.minilogo {
+	h1, span {
+		display: inline;
+		@include font-size($h5-size);
+		line-height: 1;
+		font-weight: 500;
+		letter-spacing:4px;
+		margin:0;
+	}
+	h1 {
+		display: inline-block;
+	}
+	display:inline-block;
+	transition: all 125ms linear;
+	color: $brand-action;
+	text-transform:uppercase;
+	border:1px solid $brand-action;
+	span {
+		margin-left:4px;
+		color:$brand-action-fade;
+	}
+	&:hover {
+
+		span {
+			color:$brand-light-fade;
+		}
+		background-color: $brand-action;
+		border:1px solid $brand-light;
+		color: $brand-light;
+	}
+}
+
+.page-hero {
+	.page-hero-text {
+		font-weight: 100;
+	}
+}
+.splitter {
+	@media screen and (min-width: $wide-break) {
+	  	display: inline-block;
+	}
+}
+.narrow {
+	max-width: 640px;
+}
+.text-content {
+	@extend .clearfix;
+	@extend .narrow;
+	margin-bottom: $base-spacing-unit*4;
+	.text {
+		padding-right:$base-spacing-unit;
+		float:left;
+		width: 50%;
+		@media screen and (max-width: $narrow-break) {
+		  	float:none;
+		  	width: 100%;
+		}
+		@media screen and (max-width: $mega-narrow-break){
+			padding:0;
+		}
+
+	}
+}
+
+input {
+	height:36px;
+	transition: 500ms all;
+	padding:$base-spacing-unit;
+	font-family: $base-font-stack;
+	color: $brand-light;
+	@include font-size($p-size);
+	border-radius:4px;
+	width: auto;
+	background: lighten($brand-dark,3%);
+	border:0;
+}
+.mailing-list {
+	margin-bottom: $base-spacing-unit*4;
+}
+.mailing-group {
+	@extend .narrow;
+	position:relative;
+}
+.form-group{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+}
+pre {
+	margin:0;
+}
+.mono, pre {
+	font-family:'Courier New', Courier, monospace;
+}
+input:focus {
+	outline: none;
+	border-color: lighten($brand-dark, 3%);
+}
+input[type="text"] {
+	padding: $base-spacing-unit/2;
+	margin:0 auto;
+	max-width: $wide-break;
+	display: inline-block;
+	width:100%;
+}
+input[type='submit'] {
+	color: $brand-action;
+	border: $brand-action 1px solid;
+	@include font-size($p-size);
+	text-transform:uppercase;
+	letter-spacing: 4px;
+	&:hover {
+		background-color:$brand-action-fade;
+		color:$brand-light;
+		border: 1px solid $brand-light;
+	}
+}
+input.mailing-submit {
+	display:inline-block;
+	padding: $base-spacing-unit*.5;
+	position: absolute;
+	width:auto;
+}
+
+input::-webkit-input-placeholder {  color: $brand-light-fade;   }
+input:-moz-placeholder { color: $brand-light-fade; }
+input::-moz-placeholder { color: $brand-light-fade; }
+input::-ms-input-placeholder { color: $brand-light-fade; }
+
+footer {
+	border-top:1px dotted $brand-light-fade;
+	padding-top:$base-spacing-unit;
+	p{
+		@include font-size($mini-size);
+		margin-bottom:0;
+	}
+}
