@@ -395,6 +395,7 @@ input[type='submit'] {
 input.mailing-submit {
 	display:inline-block;
 	padding: $base-spacing-unit*.5;
+    right:0;
 	position: absolute;
 	width:auto;
 }
