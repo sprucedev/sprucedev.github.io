@@ -2,3 +2,4 @@ _harp/www
 _site
 .sass-cache
 .idea
+node_modules
