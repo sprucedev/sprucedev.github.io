@@ -1,0 +1,17 @@
+iframe(name="iframe_gforms",
+       id="iframe_gforms",
+       style={display:'none'},
+       onload="if(typeof sent_gforms!='undefined'){window.location='http://spruce.sh/thankyou.html';}")
+form(action="https://docs.google.com/forms/d/1_4Kb-1R8SENrHp-ccHXIQY3jPdJRhA3kro5ggnXZcdE/formResponse",
+     method="POST",
+     target="iframe_gforms",
+     onsubmit="sent_gforms=true")
+
+  input(type="text", name="entry.1853875824", placeholder="you@youremail.com", required, pattern=".*@.*").mailing-signup
+
+  input(type="hidden", name="draftResponse", value="[,,&quot;-5739318388998846779&quot;]")
+  input(type="hidden", name="pageHistory", value="0")
+  input(type="hidden", name="fvv", value="0")
+  input(type="hidden", name="fbzx", value="-5739318388998846779")
+
+  input(type="submit", name="mailing-submit", value="Sign Up").mailing-submit
