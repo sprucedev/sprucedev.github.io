@@ -1,9 +1,0 @@
-{
-  "name": "sprucedev.github.io",
-  "scripts": {
-    "dev": "harp server"
-  },
-  "dependencies": {
-    "harp": "^0.20.1"
-  }
-}

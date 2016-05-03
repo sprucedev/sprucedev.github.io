@@ -1,0 +1,11 @@
+{
+  "name": "sprucedev.github.io",
+  "scripts": {
+    "dev": "harp server _harp",
+    "clean": "rm -rf *.html css fonts",
+    "compile": "npm run clean; harp compile _harp; mv _harp/www/* ."
+  },
+  "dependencies": {
+    "harp": "^0.20.3"
+  }
+}
