@@ -2,7 +2,7 @@
   "name": "sprucedev.github.io",
   "scripts": {
     "dev": "harp server _harp",
-    "clean": "rm -rf *.html css fonts",
+    "clean": "rm -rf *.html css css-spruce-sh fonts fonts-spruce-sh",
     "compile": "npm run clean; harp compile _harp; mv _harp/www/* ."
   },
   "dependencies": {
