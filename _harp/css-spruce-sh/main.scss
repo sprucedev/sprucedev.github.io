@@ -325,7 +325,7 @@ header {
 	@extend .narrow;
 	margin-bottom: $base-spacing-unit*4;
 	.text {
-		padding-right:$base-spacing-unit;
+		padding-right:$base-spacing-unit*2;
 		float:left;
 		width: 33%;
 		@media screen and (max-width: $narrow-break) {
