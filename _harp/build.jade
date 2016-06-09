@@ -1,0 +1,68 @@
+extends _templates/_default.jade
+
+block page-hero
+	h2.h1.page-hero-text Build
+	.text-content
+		.text.text-lhs
+			p
+				| Building containers can be a headache. Things like cache busting,
+				| registry credential management, asset compilation, tagging metadata.
+				| There's so much to think about! <em>Spruce</em> is continuous
+				| deployment built to deal with containers in the best possible way.
+
+		.text.text-rhs
+			p
+				| Preprocessor utilities allow you to compile, install, and cache assets
+				| outside of the container build. This not only speeds up the build
+				| process, but also allows you to install less in your production
+				| container. No more installing hundreds of megabytes of GCC, Webpack,
+				| and development packages to support a few hundred kilobytes of code.
+
+		i.icon.icon-rhs.icon-factory
+
+	h2.h1.page-hero-text Test
+	.text-content
+		.text.text-lhs
+			p
+				| Traditional continuous integration uses agents loaded with everything
+				| you could ever need to test your projects. They may even run a
+				| different Linux distribution to what you'll be using to run your
+				| application. You test your application, everything is fine, then you
+				| deploy and you're missing that one library, or maybe you don't have
+				| write access to a directory. <em>Spruce</em> tests in the container
+				| that you'll be deploying, stopping false positives in their tracks.
+
+		.text.text-rhs
+			p
+				| Distributed systems make it hard to test parts of your application.
+				| Keeping tests up-to-date across applications is cumbersome, and error
+				| prone. <em>Spruce</em> knows the custom parts of your application so
+				| can use the services it's built for you already, and provide them to
+				| you for testing! No more mocking; just real, live interactions.
+
+		i.icon.icon-rhs.icon-microscope
+
+	h2.h1.page-hero-text Deploy
+	.text-content
+		.text.text-lhs
+			p
+				| When you have a service that you're so sure will work, the only thing
+				| left to do is make it live for the world to admire. <em>Spruce</em>
+				| uses tags and branches right from your git repository to tag container
+				| images. This means that your deployment interface is just git push,
+				| and pull requests. Want to deploy to production? Just tag with a
+				| version, and push.
+
+		.text.text-rhs
+			p
+				| Managing application infrastructure is hard, why make it harder by
+				| being unsure of what you're deploying.
+
+		i.icon.icon-rhs.icon-server
+
+	section.text-content.mailing-list
+		block mailing-list
+			h3.widestyle Register your interest
+			block actualform
+				.mailing-group
+					include _templates/mailing_list_form.jade

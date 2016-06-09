@@ -12,15 +12,15 @@
     @-webkit-keyframes $animation_name {
         @content;
     }
- 
+
     @-moz-keyframes $animation_name {
         @content;
     }
- 
+
     @-o-keyframes $animation_name {
         @content;
     }
- 
+
     @keyframes $animation_name {
         @content;
     }
@@ -31,17 +31,17 @@
     -webkit-animation-duration: $duration;
     -webkit-animation-name: $animation;
     -webkit-animation-fill-mode: forwards; /* this prevents the ani  tion from restarting! */
- 
+
     -moz-animation-delay: $delay;
     -moz-animation-duration: $duration;
     -moz-animation-name: $animation;
     -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
- 
+
     -o-animation-delay: $delay;
     -o-animation-duration: $duration;
     -o-animation-name: $animation;
     -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
- 
+
     animation-delay: $delay;
     animation-duration: $duration;
     animation-name: $animation;
@@ -64,7 +64,7 @@ $mega-narrow-break: 486px;
 $base-font-stack: 'WorkSans', Helvetica, Arial, sans-serif;
 
 
-////////// Typography 
+////////// Typography
 $h1-size: 9.6;
 $h2-size: 4.8;
 $h3-size: 3.2;
@@ -318,7 +318,7 @@ header {
 	}
 }
 .narrow {
-	max-width: 640px;
+	max-width: 960px;
 }
 .text-content {
 	@extend .clearfix;
@@ -327,7 +327,7 @@ header {
 	.text {
 		padding-right:$base-spacing-unit;
 		float:left;
-		width: 50%;
+		width: 33%;
 		@media screen and (max-width: $narrow-break) {
 		  	float:none;
 		  	width: 100%;
@@ -335,8 +335,13 @@ header {
 		@media screen and (max-width: $mega-narrow-break){
 			padding:0;
 		}
-
 	}
+  .icon-rhs {
+    float: left;
+    margin-left: 70px;
+    font-size: 250px;
+    font-weight: 100;
+  }
 }
 
 input {
