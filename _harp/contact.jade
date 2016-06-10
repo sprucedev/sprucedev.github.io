@@ -1,0 +1,17 @@
+extends _templates/_default.jade
+
+block page-hero
+	h2.h1.page-hero-text Contact
+
+block page-content
+	section.text-content.mailing-list
+		block mailing-list
+			h3.widestyle Register your interest
+			block actualform
+				.mailing-group
+					include _templates/mailing_list_form.jade
+
+	h3.widestyle Or
+	section.text-content
+		p You can email us directly at&nbsp;
+			a(href="mailto:hello@spruce.sh") hello@spruce.sh.
