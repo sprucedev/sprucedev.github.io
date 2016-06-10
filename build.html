@@ -7,13 +7,12 @@ outside of the container build. This not only speeds up the build
 process, but also allows you to install less in your production
 container. No more installing hundreds of megabytes of GCC, Webpack,
 and development packages just to support a few hundred kilobytes of
-code!</p></div><i class="icon icon-rhs icon-factory"></i></div><h2 class="h1 page-hero-text">Test</h2><div class="text-content"><div class="text text-lhs"><p>Traditional continuous integration uses agents loaded with everything
-you could ever need to test your projects. They may even run a
-different Linux distribution to what you'll be using to run your
-application. You test your application, everything is fine, then you
-deploy and you're missing that one library, or maybe you don't have
-write access to a directory. <em>Spruce</em> tests in the container
-that you'll be deploying, stopping false positives in their tracks.</p></div><div class="text text-rhs"><p>Distributed systems make it hard to test parts of your application.
+code!</p></div><i class="icon icon-rhs icon-factory"></i></div><h2 class="h1 page-hero-text">Test</h2><div class="text-content"><div class="text text-lhs"><p>Traditional continuous integration uses test machines bloated with
+the development tools of all your projects. You test your
+application, everything is fine, then you deploy and you're missing
+libraries, or maybe you don't have write access to a directory.
+<em>Spruce</em> tests in the exact image that you'll be deploying,
+so it's like running your tests in production.</p></div><div class="text text-rhs"><p>Distributed systems make it hard to test parts of your application.
 Keeping tests up-to-date across applications is cumbersome, and error
 prone. <em>Spruce</em> knows the custom parts of your application,
 and uses the services it's built for you already, and provide them to
