@@ -10,6 +10,9 @@ RUN yum install -y \
       @core \
       cloud-init dnf \
       git puppet mcollective facter
+
+### START KS SHARED ###
+
 RUN yum clean all
 
 RUN /opt/puppetlabs/puppet/bin/gem install --verbose --no-ri --no-rdoc r10k:2.3.0 hiera-eyaml:2.1.0
@@ -44,6 +47,8 @@ RUN chmod +x /usr/local/bin/spruce-infra-cleanup.sh
 ### REMOVE CLOUD INIT SEED ###
 RUN rm -rf /var/lib/cloud/instance/*
 RUN rm -rf /var/lib/cloud/seed/nocloud-net/{user,meta}-data
+
+### END KS SHARED ###
 
 ### DOCKER SPECIFICS ###
 RUN mkdir -p /var/lib/cloud/seed/nocloud-net/
