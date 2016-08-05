@@ -46,6 +46,7 @@ RUN rm -rf /var/lib/cloud/instance/*
 RUN rm -rf /var/lib/cloud/seed/nocloud-net/{user,meta}-data
 
 ### DOCKER SPECIFICS ###
+RUN mkdir -p /var/lib/cloud/seed/nocloud-net/
 COPY cloud-init.yaml /var/lib/cloud/seed/nocloud-net/user-data
 RUN echo '{"instance-id": "d-1", hostname: "d-1"}' > /var/lib/cloud/seed/nocloud-net/meta-data
 
