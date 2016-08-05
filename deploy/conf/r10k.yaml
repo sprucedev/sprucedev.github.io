@@ -1,0 +1,4 @@
+sources:
+  main:
+    remote: git+ssh://git@github.com/sprucedev/infrastructure.git
+    basedir: /etc/puppetlabs/code/environments

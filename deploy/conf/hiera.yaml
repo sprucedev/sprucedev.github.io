@@ -1,0 +1,19 @@
+:backends:
+  - eyaml
+  - yaml
+
+:hierarchy:
+  - roles/%{::role}
+  - environment/%{::environment}
+  - landscape/%{::landscape}
+  - location/%{::location}
+  - virtual/%{::virtual}
+  - default
+
+:yaml:
+  :datadir: /etc/puppetlabs/code/environments/%{::environment}/hieradata
+:eyaml:
+  :extension: yaml
+  :datadir: /etc/puppetlabs/code/environments/%{::environment}/hieradata
+  :pkcs7_private_key: /etc/puppetlabs/puppet/secure/keys/private_key.pkcs7.pem
+  :pkcs7_public_key:  /etc/puppetlabs/puppet/secure/keys/public_key.pkcs7.pem
